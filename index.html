@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Korion Music — Кроки</title>
+
+    <!-- 1. Preconnect до Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- 2. Імпорт Google Fonts: Jost (600,700) та Open Sans (300,600,700) -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Open+Sans:wght@300;600;700&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- 3. Tailwind-конфіг: розширюємо кольори (шрифти додамо у власному шарі) -->
+    <script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						colors: {
+							primaryText: "#333333",
+							accent: "#E67E22",
+						},
+					},
+				},
+			};
+    </script>
+
+    <!-- 4. Підключаємо Tailwind через CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 5. Додаємо у власний шар утиліт класи для шрифтів Jost та Open Sans -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .font-jost {
+                font-family: 'Jost', sans-serif;
+            }
+            .font-opensans {
+                font-family: 'Open Sans', sans-serif;
+            }
+        }
+    </style>
+
+    <style>
+        /* Скидаємо базові відступи браузера */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #ffffff;
+            color: #333333;
+        }
+    </style>
+</head>
+<body class="font-opensans">
+<div class="max-w-screen-lg mx-auto p-4">
+    <!-- ====== Header: логотип Korion ====== -->
+    <header>
+        <img
+                src="images/korion-logo.png"
+                srcset="images/korion-logo@2x.png 2x, images/korion-logo@3x.png 3x"
+                alt="Korion Logo"
+                class="w-[149.91px] h-[41px] md:w-[266.17px] md:h-[72px] mb-4 md:mb-0"
+        />
+    </header>
+
+    <!-- ====== Main: дві колонки на десктопі, стовпчик на мобільному ====== -->
+    <main class="md:flex md:mt-10">
+        <!-- Ліва колонка: на мобільному — flex-row, на десктопі — flex-col -->
+        <section class="flex flex-row md:flex-col items-center md:items-start">
+            <img
+                    src="images/single-kroky-cover.png"
+                    srcset="images/single-kroky-cover@2x.png 2x, images/single-kroky-cover@3x.png 3x"
+                    alt="Обкладинка синглу Кроки"
+                    class="w-[150px] h-[150px] md:w-[320px] md:h-[320px] rounded-lg object-cover"
+            />
+            <div class="ml-4 md:ml-0 mt-0 md:mt-4">
+                <h1 class="font-jost font-bold text-[32px] md:text-[40px]">
+                    Кроки
+                </h1>
+                <p class="font-opensans font-bold text-[12px] md:text-[14px] text-accent mt-1 text-[#E67E22]">
+                    Перший сингл
+                </p>
+            </div>
+        </section>
+
+        <!-- Права колонка: "Слухати на улюблених платформах" -->
+        <section class="mt-8 md:mt-0 md:ml-16 flex-1">
+            <h2 class="font-jost font-bold text-[20px] md:text-[40px] lg:mb-8">
+                Слухати на улюблених платформах
+            </h2>
+
+            <!-- Список платформ: обгорнуті у <a> -->
+            <div class="mt-4 space-y-6 md:space-y-10">
+                <!-- Spotify -->
+                <a
+                        href="https://open.spotify.com/track/2oTY9lPOXtkU2Lmx4bWZQO?si=ca0b289ed7f04a34"
+                        target="_blank"
+                        rel="noopener"
+                        class="flex items-center"
+                >
+                    <img
+                            src="images/spotify-logo.png"
+                            srcset="images/spotify-logo@2x.png 2x, images/spotify-logo@3x.png 3x"
+                            alt="Spotify"
+                            class="w-[50px] h-[50px] md:w-[60px] md:h-[60px] object-contain"
+                    />
+                    <span class="ml-4 font-opensans font-semibold text-[20px] ">
+              Spotify
+            </span>
+                </a>
+
+                <!-- Apple Music -->
+                <a
+                        href="https://music.apple.com/us/album/%D0%BA%D1%80%D0%BE%D0%BA%D0%B8-single/1817979587"
+                        target="_blank"
+                        rel="noopener"
+                        class="flex items-center"
+                >
+                    <img
+                            src="images/apple-music-logo.png"
+                            srcset="images/apple-music-logo@2x.png 2x, images/apple-music-logo@3x.png 3x"
+                            alt="Apple Music"
+                            class="w-[50px] h-[50px] md:w-[60px] md:h-[60px] object-contain"
+                    />
+                    <span class="ml-4 font-opensans font-semibold text-[20px] ">
+              Apple Music
+            </span>
+                </a>
+
+                <!-- YouTube Music -->
+                <a
+                        href="https://music.youtube.com/watch?v=jgwh07TY9-Y&si=goEtRkqxrG0rEfKg"
+                        target="_blank"
+                        rel="noopener"
+                        class="flex items-center"
+                >
+                    <img
+                            src="images/youtube-music-logo.png"
+                            srcset="images/youtube-music-logo@2x.png 2x, images/youtube-music-logo@3x.png 3x"
+                            alt="YouTube Music"
+                            class="w-[50px] h-[50px] md:w-[60px] md:h-[60px] object-contain"
+                    />
+                    <span class="ml-4 font-opensans font-semibold text-[20px] ">
+              YouTube Music
+            </span>
+                </a>
+
+                <!-- Deezer -->
+                <a
+                        href="https://www.deezer.com/en/album/765863541"
+                        target="_blank"
+                        rel="noopener"
+                        class="flex items-center"
+                >
+                    <img
+                            src="images/dezzer-logo.png"
+                            srcset="images/dezzer-logo@2x.png 2x, images/dezzer-logo@3x.png 3x"
+                            alt="Deezer"
+                            class="w-[50px] h-[50px] md:w-[60px] md:h-[60px] object-contain"
+                    />
+                    <span class="ml-4 font-opensans font-semibold text-[20px] ">
+              Deezer
+            </span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====== Footer: соцмережі та копірайт ====== -->
+    <footer class="mt-12 md:mt-16 flex flex-col md:flex-row justify-between items-center">
+        <!-- Ліва частина футера: "Слідкуй в соцмережах" + іконки -->
+        <div>
+            <p class="font-jost font-semibold text-[14px] md:text-[20px]">
+                Слідкуй в соцмережах
+            </p>
+            <div class="flex space-x-4 mt-2">
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@korion.music" target="_blank" rel="noopener">
+                    <img
+                            src="images/tiktok-logo.png"
+                            srcset="images/tiktok-logo@2x.png 2x, images/tiktok-logo@3x.png 3x"
+                            alt="TikTok"
+                            class="w-[30px] h-[30px] md:w-[40px] md:h-[40px] object-contain"
+                    />
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/korion.music" target="_blank" rel="noopener">
+                    <img
+                            src="images/instagram-logo.png"
+                            srcset="images/instagram-logo@2x.png 2x, images/instagram-logo@3x.png 3x"
+                            alt="Instagram"
+                            class="w-[30px] h-[30px] md:w-[40px] md:h-[40px] object-contain"
+                    />
+                </a>
+            </div>
+        </div>
+
+        <!-- © Korion Music 2025: на мобільному — по центру під соцмережами; на десктопі — праворуч -->
+        <p class="w-full text-center md:w-auto md:text-right font-opensans font-light text-[12px] md:text-[14px] mt-6 md:mt-0">
+            © Korion Music 2025
+        </p>
+    </footer>
+</div>
+</body>
+</html>
